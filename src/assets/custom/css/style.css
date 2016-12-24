@@ -1,0 +1,17 @@
+.block{
+    height: 50px;
+    width: 50px;
+    border:green;
+    border-style: solid;
+    display: inline-block;
+    border-width: 2px
+}
+
+#grid-container{
+    width: 540px;
+    height: 600px;
+}
+.horizontal-gap{
+    padding-left: 5px;
+    padding-right: 5px
+}
