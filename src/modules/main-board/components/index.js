@@ -1,4 +1,4 @@
 import Block from './block';
 import Grid from './grid';
-
-export default { Block, Grid };
+import GameInfo from './game-info'
+export default { Block, Grid, GameInfo };

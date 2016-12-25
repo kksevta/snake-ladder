@@ -133,38 +133,7 @@ class MainBoardWrapper extends Component {
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-5">
-                            <ul class="list-group">
-                                {
-                                    this.state.players.map(function (player) {
-                                        return <li key={player.id} class="list-group-item"><img class="horizontal-gap" src={player.icon} /><p class="horizontal-gap" style={{ display: 'inline-block' }}>{player.name}</p><span class="badge horizontal-gap">{player.position}</span></li>
-                                    })
-                                }
-                            </ul>
-                            {
-                                this.getWinner() ?
-                                    <button type="button" class="btn btn-default btn-md" disabled onClick={() => this.rollDice()}>
-                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                        Roll Dice
-                                </button> :
-                                    <button type="button" class="btn btn-default btn-md" onClick={() => this.rollDice()}>
-                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                        Roll Dice
-                                </button>
-                            }
-                            <button type="button" class="btn btn-default btn-md" onClick={() => this.resetGame()}>
-                                <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
-                                Reset
-                            </button>
-                            <br />
-                            <br /><br />
-                            <p style={{ fontWeight: 'bold' }}>Next Turn:{
-                                this.getPlayerWithTurn().name
-                            }</p>
-                            <p style={{ fontWeight: 'bold' }}>Dice value:{this.state.diceVal}</p>
-                            {
-                                this.getWinner() ? <div class="alert alert-success" role="alert">{this.getWinner().name} : WON</div> : null
-                            }
-
+                            <MainBoardComponents.GameInfo players={this.state.players} getWinner={() => this.getWinner()} rollDice={() => this.rollDice()} resetGame={() => this.resetGame()} getPlayerWithTurn={() => this.getPlayerWithTurn()} diceVal={this.state.diceVal} ladders={Ladders} snakes={Snakes} />
                         </div>
                         <div class="col-md-7" >
                             <div id="grid-container">

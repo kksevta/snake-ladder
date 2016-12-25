@@ -5,8 +5,12 @@ const Block = ({content}) => {
         <div class="block">
             {content.text}
             {
-                content.icons.map((icon) => {
-                    return (<img style={{ position: 'absolute' }} src={icon} />)
+                content.icons.map((icon, index) => {
+                    let style = { position: 'absolute' }
+                    if (index == 1) {
+                        style.top = '50%'
+                    }
+                    return (<img key={index} style={style} src={icon} />)
                 })
             }
         </div>

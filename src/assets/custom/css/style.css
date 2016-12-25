@@ -4,7 +4,8 @@
     border:green;
     border-style: solid;
     display: inline-block;
-    border-width: 2px
+    border-width: 2px;
+    position:relative
 }
 
 #grid-container{
